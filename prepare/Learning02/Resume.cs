@@ -5,10 +5,10 @@
 
         public void DisplayResume()
         {
-            foreach (string job in _jobs)
+            Console.WriteLine($"Name: {_name}");
+            foreach (Job job in _jobs)
             {
-                Console.WriteLine($"Name: {_name}");
-                Console.WriteLine($"Jobs: {job}");
+                Console.WriteLine($"Job: {job.GetJobInfo()}");
             }
         }
     }
