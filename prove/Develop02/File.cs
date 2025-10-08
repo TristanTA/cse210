@@ -1,4 +1,4 @@
-class File
+class FileManager
 {
     // Parameters
     public string _fileName;
