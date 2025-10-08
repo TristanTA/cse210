@@ -32,21 +32,24 @@ class Program
 
             if (user_action == 1)
             {
-                entry.Write(promptList);
+                journal.Add(entry.Write(promptList));
             }
             else if (user_action == 2)
             {
+                Console.WriteLine("Display:");
                 entry.Display(journal);
             }
             else if (user_action == 3)
             {
+                Console.WriteLine("Save:");
                 fileManager.Save(journal);
             }
             else if (user_action == 4)
             {
+                Console.WriteLine("Load:");
                 Console.WriteLine("What is the file name?");
                 string fileName = Console.ReadLine();
-                fileManager.Load(fileName);
+                journal = fileManager.Load(fileName);
             }
             else if (user_action == 5)
             {
