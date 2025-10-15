@@ -4,6 +4,7 @@ class Program
 {
     static void Main(string[] args)
     {
-        Console.WriteLine("Hello Develop03 World!");
+        Console.WriteLine("Welcome to the Automatic Scripture Memory Game");
+        Reference ref = new Reference("Matthew", 18, 5);
     }
 }
