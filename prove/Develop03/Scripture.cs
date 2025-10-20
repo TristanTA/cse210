@@ -42,7 +42,7 @@ class Scripture
         }
         else
         {
-            Program.Main(Array.Empty<string>());
+            Environment.Exit(0);
         }
 
     }
