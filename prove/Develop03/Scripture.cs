@@ -33,9 +33,17 @@ class Scripture
             if (!_verseList[i].IsHidden())
                 visibleIndexes.Add(i);
         }
-        Random random = new Random();
-        int randomIndex = visibleIndexes[random.Next(visibleIndexes.Count)];
-        _verseList[randomIndex].HideWord();
-        UpdateVerseString();
+        if (visibleIndexes.Any())
+        {
+            Random random = new Random();
+            int randomIndex = visibleIndexes[random.Next(visibleIndexes.Count)];
+            _verseList[randomIndex].HideWord();
+            UpdateVerseString();
+        }
+        else
+        {
+            Program.Main(Array.Empty<string>());
+        }
+
     }
 }
