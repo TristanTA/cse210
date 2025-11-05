@@ -23,7 +23,7 @@ class Reflection : Activity
         {
             Console.Clear();
             Console.WriteLine($"Think of a time when you {experience}");
-            Console.WriteLine(GetQuestion());
+            Console.WriteLine(GetQuestion(), "(press enter to continue)");
             string input = Console.ReadLine();
             if (!string.IsNullOrEmpty(input))
             {
@@ -31,7 +31,6 @@ class Reflection : Activity
             }
         }
         Console.Clear();
-        Console.WriteLine($"You entered {counter} responses.");
         Console.WriteLine(_endMessage);
         base.Spinner(10);
     }
