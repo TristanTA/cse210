@@ -3,7 +3,11 @@ public class Grid
     private string _name;
     private Dictionary<Block, int> _blocks;
 
-
+    public Grid(string name, Dictionary<Block, int> blocks)
+    {
+        _name = name;
+        _blocks = blocks;
+    }
 
     public string Get_name(){
         return _name;
