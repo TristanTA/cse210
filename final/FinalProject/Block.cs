@@ -20,7 +20,6 @@ public class Block
         _thrust = thrust;
         _components = components;
         _durability = Calculate_Durability();
-        Assign_Traits();
     }
 
  private void Assign_Traits()

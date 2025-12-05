@@ -23,9 +23,11 @@ class Program
             string[] parts = line.Split(',');
             string name = parts[0];
             bool size = bool.Parse(parts[1]);
-            string componentsField = parts[2];
-            
-            string[] block_components = parts[2].Split('|');
+            bool energy = bool.Parse(parts[2]);
+            bool fuel = bool.Parse(parts[3]);
+            string fuelType = parts[4];
+            bool thrust = bool.Parse(parts[5]);
+            string[] block_components = parts[6].Split('|');
             Dictionary<Component, int> comp_dict = new Dictionary<Component, int>();
             foreach (string comp in block_components)
             {
@@ -36,7 +38,7 @@ class Program
                 comp_dict.Add(comp_obj, comp_count);
             }
             
-            Block b = new Block(name, size, comp_dict);
+            Block b = new Block(name, size, energy, fuel, fuelType, thrust, comp_dict);
         }
         Console.WriteLine(block_dict);
     }
