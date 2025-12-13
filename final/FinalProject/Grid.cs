@@ -1,24 +1,12 @@
 public class Grid
 {
-    private string _name;
-    private Dictionary<Block, int> _blocks;
+    public Guid Id { get; private set; } = Guid.NewGuid();
+    public string Name {get; private set;}
+    public Dictionary<Guid, int> Blocks {get; private set;}
 
-    public Grid(string name, Dictionary<Block, int> blocks)
+    public Grid(string name)
     {
-        _name = name;
-        _blocks = blocks;
-    }
-
-    public string Get_name(){
-        return _name;
-    }
-    public Dictionary<Block, int> Get_blocks(){
-        return _blocks;
-    }
-    public void Set_name(string name){
-        _name = name;
-    }
-    public void Set_blocks(Dictionary<Block, int> blocks){
-        _blocks = blocks;
+        Name = name;
+        Blocks = new();
     }
 }

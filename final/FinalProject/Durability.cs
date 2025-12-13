@@ -1,15 +1,21 @@
 public class Durability : Trait
 {
-    private float _durability;
-
-
+    public float HitPoints { get; private set; }
 
     public Durability(Block block) : base(block)
     {
         Calculate();
     }
-    override public void Calculate()
+
+    public override void Calculate()
     {
-        _durability = 0;
+        int componentCount = 0;
+
+        foreach (var kvp in Block.Components)
+        {
+            componentCount += kvp.Value;
+        }
+
+        HitPoints = componentCount * (Block.Size ? 25f : 5f);
     }
 }

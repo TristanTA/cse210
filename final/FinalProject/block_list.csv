@@ -1,54 +1,14 @@
-Light Armor Block,true,false,false,"",false,"Steel Plate:25"
-Light Armor Block,false,false,false,"",false,"Steel Plate:1"
-Heavy Armor Block,true,false,false,"",false,"Steel Plate:150|Metal Grid:20"
-Heavy Armor Block,false,false,false,"",false,"Steel Plate:40|Metal Grid:3"
-Light Armor Slope,true,false,false,"",false,"Steel Plate:20"
-Light Armor Slope,false,false,false,"",false,"Steel Plate:1"
-Heavy Armor Slope,true,false,false,"",false,"Steel Plate:120|Metal Grid:15"
-Heavy Armor Slope,false,false,false,"",false,"Steel Plate:30|Metal Grid:2"
-Large Cargo Container,true,false,false,"",false,"Steel Plate:60|Interior Plate:40|Construction Component:40|Computer:8|Motor:12"
-Small Cargo Container,false,false,false,"",false,"Steel Plate:8|Interior Plate:6|Construction Component:6|Computer:1|Motor:1"
-Conveyor Junction,true,false,false,"",false,"Steel Plate:20|Construction Component:20|Motor:6|Computer:2"
-Conveyor Junction,false,false,false,"",false,"Steel Plate:4|Construction Component:4|Motor:1|Computer:1"
-Conveyor Tube,true,false,false,"",false,"Steel Plate:15|Construction Component:10"
-Conveyor Tube,false,false,false,"",false,"Steel Plate:2|Construction Component:1"
-Conveyor Frame,true,false,false,"",false,"Steel Plate:8|Construction Component:8"
-Conveyor Frame,false,false,false,"",false,"Steel Plate:1|Construction Component:1"
-Gyroscope,true,false,false,"",false,"Steel Plate:25|Computer:8|Construction Component:10|Motor:6|Large Steel Tube:1"
-Gyroscope,false,false,false,"",false,"Steel Plate:4|Computer:3|Construction Component:3|Motor:2"
-Cockpit,true,true,false,"",false,"Steel Plate:60|Construction Component:20|Computer:25|Display:10|Motor:6|Interior Plate:40"
-Cockpit,false,true,false,"",false,"Steel Plate:12|Construction Component:4|Computer:8|Display:2|Motor:1|Interior Plate:8"
-Flight Seat,true,true,false,"",false,"Steel Plate:25|Interior Plate:20|Construction Component:10|Display:3|Computer:5"
-Flight Seat,false,true,false,"",false,"Steel Plate:5|Interior Plate:4|Construction Component:2|Display:1|Computer:1"
-Oxygen Tank,true,false,false,"",false,"Steel Plate:80|Interior Plate:40|Construction Component:40|Computer:8|Large Steel Tube:5"
-Oxygen Tank,false,false,false,"",false,"Steel Plate:16|Interior Plate:8|Construction Component:8|Computer:2|Small Steel Tube:4"
-Hydrogen Tank,true,false,true,"Hydrogen",false,"Steel Plate:120|Construction Component:60|Large Steel Tube:20|Computer:10"
-Hydrogen Tank,false,false,true,"Hydrogen",false,"Steel Plate:20|Construction Component:10|Small Steel Tube:5|Computer:2"
-Battery,true,true,false,"",false,"Steel Plate:80|Power Cell:80|Computer:20|Construction Component:25"
-Battery,false,true,false,"",false,"Steel Plate:15|Power Cell:20|Computer:5|Construction Component:5"
-Large Reactor,true,true,true,"Uranium",false,"Steel Plate:100|Reactor Component:200|Computer:25|Construction Component:40|Large Steel Tube:20"
-Small Reactor,false,true,true,"Uranium",false,"Steel Plate:25|Reactor Component:40|Computer:4|Construction Component:10|Small Steel Tube:4"
-Ion Thruster (Large),true,true,false,"",true,"Steel Plate:150|Construction Component:40|Large Steel Tube:20|Motor:12|Computer:25|Superconductor:200"
-Ion Thruster (Small),false,true,false,"",true,"Steel Plate:25|Construction Component:8|Small Steel Tube:4|Motor:2|Computer:5|Superconductor:20"
-Atmospheric Thruster (Large),true,true,false,"",true,"Steel Plate:120|Construction Component:40|Motor:30|Computer:20|Large Steel Tube:10"
-Atmospheric Thruster (Small),false,true,false,"",true,"Steel Plate:20|Construction Component:6|Motor:4|Computer:3"
-Hydrogen Thruster (Large),true,true,true,"Hydrogen",true,"Steel Plate:100|Construction Component:40|Large Steel Tube:12|Motor:20|Computer:10|Superconductor:50"
-Hydrogen Thruster (Small),false,true,true,"Hydrogen",true,"Steel Plate:15|Construction Component:5|Small Steel Tube:2|Motor:4|Computer:2"
-Remote Control,true,true,false,"",false,"Steel Plate:15|Construction Component:10|Computer:30|Motor:6"
-Remote Control,false,true,false,"",false,"Steel Plate:3|Construction Component:2|Computer:8"
-Ore Detector,true,false,false,"",false,"Steel Plate:15|Construction Component:20|Computer:20|Motor:6|Detector Component:5"
-Ore Detector,false,false,false,"",false,"Steel Plate:3|Construction Component:4|Computer:4|Motor:1|Detector Component:1"
-Medium Cargo Container,true,false,false,"",false,"Steel Plate:40|Construction Component:20|Interior Plate:20|Motor:6|Computer:4"
-Medium Cargo Container,false,false,false,"",false,"Steel Plate:6|Construction Component:4|Interior Plate:4|Motor:1|Computer:1"
-Connector,true,false,false,"",false,"Steel Plate:60|Construction Component:40|Motor:20|Computer:10|Large Steel Tube:8"
-Connector,false,false,false,"",false,"Steel Plate:10|Construction Component:6|Motor:4|Computer:2|Small Steel Tube:2"
-Landing Gear,true,false,false,"",false,"Steel Plate:30|Construction Component:30|Motor:20"
-Landing Gear,false,false,false,"",false,"Steel Plate:5|Construction Component:6|Motor:4"
-Spotlight,true,true,false,"",false,"Steel Plate:20|Construction Component:10|Motor:2|Computer:2|Display:2"
-Spotlight,false,true,false,"",false,"Steel Plate:4|Construction Component:2|Motor:1|Computer:1|Display:1"
-Merge Block,true,false,false,"",false,"Steel Plate:40|Construction Component:20|Motor:12|Computer:10"
-Merge Block,false,false,false,"",false,"Steel Plate:6|Construction Component:4|Motor:2|Computer:2"
-Timer Block,true,false,false,"",false,"Steel Plate:10|Construction Component:6|Computer:6|Motor:2"
-Timer Block,false,false,false,"",false,"Steel Plate:2|Construction Component:1|Computer:2"
-Programmable Block,true,true,false,"",false,"Steel Plate:50|Construction Component:20|Computer:40|Display:8"
-Programmable Block,false,true,false,"",false,"Steel Plate:8|Construction Component:4|Computer:10|Display:2"
+LightArmorBlock,true,SteelPlate:25
+LightArmorBlock,false,SteelPlate:1
+InteriorWall,true,InteriorPlate:10|ConstructionComponent:2
+InteriorWall,false,InteriorPlate:1|ConstructionComponent:1
+SmallCargoContainer,true,SteelPlate:20|ConstructionComponent:5|SmallSteelTube:4|Computer:2
+SmallCargoContainer,false,SteelPlate:3|ConstructionComponent:1|SmallSteelTube:1
+Battery,true,SteelPlate:80|PowerCell:20|Computer:5
+Battery,false,SteelPlate:10|PowerCell:4|Computer:2
+Reactor,true,SteelPlate:25|LargeSteelTube:6|ReactorComponent:20|Computer:5
+Reactor,false,SteelPlate:8|SmallSteelTube:4|ReactorComponent:5|Computer:2
+Gyroscope,true,SteelPlate:25|Motor:4|LargeSteelTube:2|Computer:5
+Gyroscope,false,SteelPlate:8|Motor:2|SmallSteelTube:1|Computer:2
+AtmosphericThruster,true,SteelPlate:80|Motor:8|LargeSteelTube:4|ThrusterComponents:16|Computer:4
+AtmosphericThruster,false,SteelPlate:20|Motor:4|SmallSteelTube:2|ThrusterComponents:5|Computer:2

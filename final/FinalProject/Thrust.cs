@@ -1,17 +1,24 @@
 public class Thrust : Trait
 {
-    private float _maxOutput;
-    private float _reqOutput;
-
-
+    public float MaxOutput { get; private set; }
+    public float RequiredEnergy { get; private set; }
 
     public Thrust(Block block) : base(block)
     {
         Calculate();
     }
-    override public void Calculate()
+
+    public override void Calculate()
     {
-        _maxOutput = 0;
-        _reqOutput = 0;
+        if (Block.Size) // large grid
+        {
+            MaxOutput = 600_000f;
+            RequiredEnergy = 4.0f;
+        }
+        else // small grid
+        {
+            MaxOutput = 80_000f;
+            RequiredEnergy = 0.6f;
+        }
     }
 }

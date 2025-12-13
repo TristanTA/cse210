@@ -1,21 +1,29 @@
 public class Energy : Trait
 {
-    private float _toFill;
-    private float _toDrain;
-    private float _maxOutput;
-    private float _reqOutput;
-
-
+    public float MaxOutput { get; private set; }
+    public float RequiredInput { get; private set; }
 
     public Energy(Block block) : base(block)
     {
         Calculate();
     }
-    override public void Calculate()
+
+    public override void Calculate()
     {
-        _toFill = 0;
-        _toDrain = 0;
-        _maxOutput = 0;
-        _reqOutput = 0;
+        if (Block.Name.Contains("Battery"))
+        {
+            MaxOutput = Block.Size ? 12.0f : 4.0f;
+            RequiredInput = 0f;
+        }
+        else if (Block.Name.Contains("Reactor"))
+        {
+            MaxOutput = Block.Size ? 15.0f : 5.0f;
+            RequiredInput = 0f;
+        }
+        else
+        {
+            MaxOutput = 0f;
+            RequiredInput = Block.Size ? 2.0f : 0.5f;
+        }
     }
 }

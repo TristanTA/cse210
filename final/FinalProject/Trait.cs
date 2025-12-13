@@ -1,20 +1,16 @@
 abstract public class Trait
 {
-    protected Block _block;
+    public Block Block { get; protected set; }
 
 
-    public Trait(Block block)
+
+    protected Trait(Block block)
     {
-        _block = block;
+        Block = block;
+
+        Console.WriteLine(
+            $"[Trait Added] Block: {block.Name}, Trait: {GetType().Name}"
+        );
     }
     abstract public void Calculate();
-
-    virtual public Block Get_block()
-    {
-        return _block;
-    }
-    virtual public void Set_Block(Block block)
-    {
-        _block = block;
-    }
     }

@@ -1,19 +1,27 @@
 public class Fuel : Trait
 {
-    private string _fuel;
-    private float _toDrain;
-    private float _toFill;
+    public string FuelType { get; }
+    public float ConsumptionRate { get; private set; }
 
-
-    public Fuel(string fuel, Block block) : base(block)
+    public Fuel(Block block, string fuelType) : base(block)
     {
-        _fuel = fuel;
+        FuelType = fuelType;
         Calculate();
     }
 
     public override void Calculate()
     {
-        _toDrain = 0;
-        _toFill = 0;
+        if (Block.Name.Contains("Reactor"))
+        {
+            ConsumptionRate = Block.Size ? 0.1f : 0.03f;
+        }
+        else if (Block.Name.Contains("Thruster"))
+        {
+            ConsumptionRate = Block.Size ? 1.2f : 0.4f;
+        }
+        else
+        {
+            ConsumptionRate = 0f;
+        }
     }
 }

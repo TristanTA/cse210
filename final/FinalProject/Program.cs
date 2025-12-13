@@ -4,42 +4,65 @@ class Program
 {
     static void Main(string[] args)
     {
-        Dictionary<string, Component> component_dict = new Dictionary<string, Component>();
-        string[] components = File.ReadAllLines("component_list.csv");
-        foreach (string line in components)
+        Dictionary<Guid, Component> components = new();
+        Dictionary<Guid, Block> blocks = new();
+        Dictionary<Guid, Grid> grids = new();
+        
+        Grid ship = new Grid("Main Grid");
+        grids.Add(ship.Id, ship);
+
+        foreach (var line in File.ReadAllLines("component_list.csv"))
         {
             string[] parts = line.Split(',');
             string name = parts[0];
             float strength = float.Parse(parts[1]);
-            Component c = new Component(name, strength);
-            component_dict.Add(name, c);
-        }
-        Console.WriteLine(component_dict);
 
-        Dictionary<string, Block> block_dict = new Dictionary<string, Block>();
-        string[] blocks = File.ReadAllLines("block_list.csv");
-        foreach (string line in blocks)
+            Component component = new Component(Guid.Empty, name, strength);
+            components.Add(component.Id, component);
+        }
+
+        foreach (string line in File.ReadAllLines("block_list.csv"))
         {
             string[] parts = line.Split(',');
-            string name = parts[0];
+            string blockName = parts[0];
             bool size = bool.Parse(parts[1]);
-            bool energy = bool.Parse(parts[2]);
-            bool fuel = bool.Parse(parts[3]);
-            string fuelType = parts[4];
-            bool thrust = bool.Parse(parts[5]);
-            string[] block_components = parts[6].Split('|');
-            Dictionary<Component, int> comp_dict = new Dictionary<Component, int>();
-            foreach (string comp in block_components)
+
+            Block block = new Block(ship.Id, blockName, size);
+            blocks.Add(block.Id, block);
+            ship.Blocks.Add(block.Id, 1);
+
+            string[] blockComponents = parts[2].Split('|');
+
+            foreach (string comp in blockComponents)
             {
-                string[] split_comp = comp.Split(":");
-                string comp_name = split_comp[0].Trim().Trim('"');
-                Component comp_obj = component_dict[comp_name];
-                int comp_count = int.Parse(split_comp[1].Trim().Trim('"'));
-                comp_dict.Add(comp_obj, comp_count);
+                string[] split = comp.Split(':');
+                string compName = split[0].Trim();
+                int count = int.Parse(split[1]);
+            Component component = FindComponentByName(components, compName);
+            block.Components.Add(component.Id, count);
             }
-            
-            Block b = new Block(name, size, energy, fuel, fuelType, thrust, comp_dict);
+            foreach (Trait trait in block.Traits)
+            {
+                trait.Calculate();
+            }
         }
-        Console.WriteLine(block_dict);
+
+        Console.WriteLine("Loaded:");
+        Console.WriteLine($"Grids: {grids.Count}");
+        Console.WriteLine($"Blocks: {blocks.Count}");
+        Console.WriteLine($"Components: {components.Count}");
+    }
+
+    private static Component FindComponentByName(
+        Dictionary<Guid, Component> components,
+        string name)
+    {
+        foreach (Component c in components.Values)
+        {
+            if (c.Name == name)
+                return c;
+        }
+
+        throw new Exception($"Component not found: {name}");
     }
 }
